@@ -6,31 +6,32 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-    }
-    .hero {
-      background-image: url('banner.jpg'); /* must match your uploaded file name */
+      background-image: url('banner.jpg'); /* full-page background */
       background-size: cover;
       background-position: center;
-      height: 300px; /* adjust height */
-      position: relative; /* allows absolute positioning inside */
+      height: 100vh; /* full viewport height */
+      position: relative;
     }
-    .hero h1 {
+
+    .hero-text {
       position: absolute;
-      bottom: 20px; /* pushes text to bottom */
+      bottom: 20px; /* stick to bottom */
       left: 50%;
       transform: translateX(-50%);
       font-size: 2.5em;
-      font-weight: bold; /* makes text bold */
+      font-weight: bold;
       color: black; /* black font */
       background-color: rgba(255, 255, 255, 0.7); /* block style background */
       padding: 10px 20px;
       border-radius: 5px;
       text-align: center;
     }
+
     .content {
       text-align: center;
       margin-top: 30px;
     }
+
     a {
       display: inline-block;
       margin-top: 20px;
@@ -41,21 +42,22 @@
       border-radius: 5px;
       font-weight: bold;
     }
+
     a:hover {
       background-color: #e91e63;
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
+<!-- Hero Section -->
   <div class="hero">
-    <h1>💖 Welcome to Your Quiz!</h1>
+    <h1>💖 Welcome to our Valentine Quiz! 💖</h1>
   </div>
 
   <!-- Content Section -->
   <div class="content">
-    <p>Answer each question and see instant feedback.</p>
-    <a href="question1.html">Start Quiz ➡️</a>
+    <p>Answer carefully.. Wrong answers may lead to teasing, cuddles, and extra love</p>
+    <a href="question1.html">Let the cupid start shooting arrows ➡️</a>
   </div>
 </body>
 </html>
