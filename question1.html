@@ -3,24 +3,106 @@
 <head>
   <title>Question 1</title>
   <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    .feedback { margin-top: 20px; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('ques1.jpg'); /* full-page background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .option {
+      display: block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .option.correct {
+      background-color: green;
+      color: white;
+    }
+
+    .option.wrong {
+      background-color: red;
+      color: white;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: #1976d2;
+    }
   </style>
 </head>
 <body>
-  <h2>What is our wedding anniversary date?</h2>
-  <button onclick="checkAnswer('wrong')">March 10</button>
-  <button onclick="checkAnswer('correct')">September 15</button>
-  <button onclick="checkAnswer('wrong')">December 1</button>
+  <h2>When did our love story begin?</h2>
+
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> September 10
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="correct" onclick="checkAnswer(this)"> September 15
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> September 12
+  </label>
 
   <div id="feedback" class="feedback"></div>
   <br>
   <a href="question2.html">Next ➡️</a>
 
   <script>
-    function checkAnswer(answer) {
-      document.getElementById('feedback').innerHTML =
-        answer === 'correct' ? "✅ Correct! You remembered!" : "❌ Oops, not quite right!";
+    function checkAnswer(selected) {
+      // Reset all options
+      document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('correct', 'wrong');
+      });
+
+      // Apply highlight based on answer
+      if (selected.value === 'correct') {
+        selected.parentElement.classList.add('correct');
+        document.getElementById('feedback').innerHTML = "✅ 💖 Ahh. You remembered my love! 💖";
+      } else {
+        selected.parentElement.classList.add('wrong');
+        document.getElementById('feedback').innerHTML = "❌ Correct ah selecte panuda funnt fool";
+      }
     }
   </script>
 </body>
