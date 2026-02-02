@@ -8,11 +8,48 @@
       font-family: Arial, sans-serif;
     }
     .hero {
-      background-image: url('banner.jpg'); /* replace with your uploaded image name */
+      background-image: url('banner.jpg'); /* must match your uploaded file name */
       background-size: cover;
       background-position: center;
-      height: 300px; /* adjust height as needed */
+      height: 300px; /* adjust height */
       display: flex;
       align-items: center;
       justify-content: center;
-      color
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 2.5em;
+    }
+    .content {
+      text-align: center;
+      margin-top: 30px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff4081;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    a:hover {
+      background-color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>💖 Welcome to Your Quiz!</h1>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <p>Answer each question and see instant feedback.</p>
+    <a href="question1.html">Start Quiz ➡️</a>
+  </div>
+</body>
+</html>
