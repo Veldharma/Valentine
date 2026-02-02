@@ -3,24 +3,109 @@
 <head>
   <title>Question 4</title>
   <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    .feedback { margin-top: 20px; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('ques4.jpg'); /* full-page background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .option {
+      display: block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .option.correct {
+      background-color: green;
+      color: white;
+    }
+
+    .option.wrong {
+      background-color: red;
+      color: white;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: #1976d2;
+    }
   </style>
 </head>
 <body>
-  <h2>Which movie did we watch on our first date?</h2>
-  <button onclick="checkAnswer('wrong')">Titanic</button>
-  <button onclick="checkAnswer('correct')">Dil Chahta Hai</button>
-  <button onclick="checkAnswer('wrong')">Kabhi Khushi Kabhie Gham</button>
+  <h2>How much do you love?</h2>
+
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> A lot ❤️
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> More every day
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="Depends on the food" onclick="checkAnswer(this)"> Forever & beyond infinity
+  </label>
+    <label class="option">
+    <input type="radio" name="answer" value="correct" onclick="checkAnswer(this)"> Depends on the food
+  </label>
 
   <div id="feedback" class="feedback"></div>
   <br>
-  <a href="question5.html">Next ➡️</a>
+  <a href="question2.html">Next ➡️</a>
 
   <script>
-    function checkAnswer(answer) {
-      document.getElementById('feedback').innerHTML =
-        answer === 'correct' ? "✅ Correct! That was our first movie together!" : "❌ Wrong guess!";
+    function checkAnswer(selected) {
+      // Reset all options
+      document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('correct', 'wrong');
+      });
+
+      // Apply highlight based on answer
+      if (selected.value === 'correct') {
+        selected.parentElement.classList.add('correct');
+        document.getElementById('feedback').innerHTML = "✅ 💖 That's the answer of my dreams 💖";
+      } else {
+        selected.parentElement.classList.add('wrong');
+        document.getElementById('feedback').innerHTML = "❌ Hmm.... I expected more love";
+      }
     }
   </script>
 </body>
