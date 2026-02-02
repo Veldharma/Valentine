@@ -81,10 +81,10 @@
     <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> More every day
   </label>
   <label class="option">
-    <input type="radio" name="answer" value="Depends on the food" onclick="checkAnswer(this)"> Forever & beyond infinity
+    <input type="radio" name="answer" value="correct" onclick="checkAnswer(this)"> Forever & beyond infinity
   </label>
     <label class="option">
-    <input type="radio" name="answer" value="correct" onclick="checkAnswer(this)"> Depends on the food
+    <input type="radio" name="answer" value="wrong1" onclick="checkAnswer(this)"> Depends on the food
   </label>
 
   <div id="feedback" class="feedback"></div>
@@ -106,8 +106,13 @@
         selected.parentElement.classList.add('wrong');
         document.getElementById('feedback').innerHTML = "❌ Hmm.... I expected more love";
       }
+      else {
+        selected.parentElement.classList.add('wrong1');
+        document.getElementById('feedback').innerHTML = "❌ Eppa pathalum soru soru";
+      }
     }
   </script>
 </body>
 </html>
+
 
