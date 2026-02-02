@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 3</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .feedback { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>What is my favorite dessert?</h2>
+  <button onclick="checkAnswer('wrong')">Ice Cream</button>
+  <button onclick="checkAnswer('wrong')">Brownie</button>
+  <button onclick="checkAnswer('correct')">Gulab Jamun</button>
+
+  <div id="feedback" class="feedback"></div>
+  <br>
+  <a href="question4.html">Next ➡️</a>
+
+  <script>
+    function checkAnswer(answer) {
+      document.getElementById('feedback').innerHTML =
+        answer === 'correct' ? "✅ Sweet choice, you know me well!" : "❌ Nope, not my favorite!";
+    }
+  </script>
+</body>
+</html>

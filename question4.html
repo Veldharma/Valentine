@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 4</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .feedback { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Which movie did we watch on our first date?</h2>
+  <button onclick="checkAnswer('wrong')">Titanic</button>
+  <button onclick="checkAnswer('correct')">Dil Chahta Hai</button>
+  <button onclick="checkAnswer('wrong')">Kabhi Khushi Kabhie Gham</button>
+
+  <div id="feedback" class="feedback"></div>
+  <br>
+  <a href="question5.html">Next ➡️</a>
+
+  <script>
+    function checkAnswer(answer) {
+      document.getElementById('feedback').innerHTML =
+        answer === 'correct' ? "✅ Correct! That was our first movie together!" : "❌ Wrong guess!";
+    }
+  </script>
+</body>
+</html>

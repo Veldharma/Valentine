@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 5</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .feedback { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>What is my favorite hobby?</h2>
+  <button onclick="checkAnswer('wrong')">Cooking</button>
+  <button onclick="checkAnswer('wrong')">Gardening</button>
+  <button onclick="checkAnswer('correct')">Photography</button>
+
+  <div id="feedback" class="feedback"></div>
+  <br>
+  <a href="final.html">Finish ➡️</a>
+
+  <script>
+    function checkAnswer(answer) {
+      document.getElementById('feedback').innerHTML =
+        answer === 'correct' ? "✅ Yes! You know me so well!" : "❌ Not quite, try again!";
+    }
+  </script>
+</body>
+</html>

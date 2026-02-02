@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 2</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .feedback { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Where was our first trip together?</h2>
+  <button onclick="checkAnswer('wrong')">Goa</button>
+  <button onclick="checkAnswer('correct')">Ooty</button>
+  <button onclick="checkAnswer('wrong')">Delhi</button>
+
+  <div id="feedback" class="feedback"></div>
+  <br>
+  <a href="question3.html">Next ➡️</a>
+
+  <script>
+    function checkAnswer(answer) {
+      document.getElementById('feedback').innerHTML =
+        answer === 'correct' ? "✅ Yes, that was such a special trip!" : "❌ Not quite, try again!";
+    }
+  </script>
+</body>
+</html>

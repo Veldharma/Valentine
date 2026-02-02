@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 1</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    .feedback { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>What is our wedding anniversary date?</h2>
+  <button onclick="checkAnswer('wrong')">March 10</button>
+  <button onclick="checkAnswer('correct')">September 15</button>
+  <button onclick="checkAnswer('wrong')">December 1</button>
+
+  <div id="feedback" class="feedback"></div>
+  <br>
+  <a href="question2.html">Next ➡️</a>
+
+  <script>
+    function checkAnswer(answer) {
+      document.getElementById('feedback').innerHTML =
+        answer === 'correct' ? "✅ Correct! You remembered!" : "❌ Oops, not quite right!";
+    }
+  </script>
+</body>
+</html>
