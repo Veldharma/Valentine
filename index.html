@@ -12,14 +12,20 @@
       background-size: cover;
       background-position: center;
       height: 300px; /* adjust height */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      position: relative; /* allows absolute positioning inside */
     }
     .hero h1 {
+      position: absolute;
+      bottom: 20px; /* pushes text to bottom */
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 2.5em;
+      font-weight: bold; /* makes text bold */
+      color: black; /* black font */
+      background-color: rgba(255, 255, 255, 0.7); /* block style background */
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
     }
     .content {
       text-align: center;
