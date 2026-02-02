@@ -3,24 +3,106 @@
 <head>
   <title>Question 2</title>
   <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    .feedback { margin-top: 20px; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('ques2.jpg'); /* full-page background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .option {
+      display: block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .option.correct {
+      background-color: green;
+      color: white;
+    }
+
+    .option.wrong {
+      background-color: red;
+      color: white;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: #1976d2;
+    }
   </style>
 </head>
 <body>
-  <h2>Where was our first trip together?</h2>
-  <button onclick="checkAnswer('wrong')">Goa</button>
-  <button onclick="checkAnswer('correct')">Ooty</button>
-  <button onclick="checkAnswer('wrong')">Delhi</button>
+  <h2>Who fell in love first?</h2>
+
+  <label class="option">
+    <input type="radio" name="answer" value="correct" onclick="checkAnswer(this)"> Me 😊
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> You 🥰
+  </label>
+  <label class="option">
+    <input type="radio" name="answer" value="wrong" onclick="checkAnswer(this)"> Both 🙌🏼
+  </label>
 
   <div id="feedback" class="feedback"></div>
   <br>
-  <a href="question3.html">Next ➡️</a>
+  <a href="question2.html">Next ➡️</a>
 
   <script>
-    function checkAnswer(answer) {
-      document.getElementById('feedback').innerHTML =
-        answer === 'correct' ? "✅ Yes, that was such a special trip!" : "❌ Not quite, try again!";
+    function checkAnswer(selected) {
+      // Reset all options
+      document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('correct', 'wrong');
+      });
+
+      // Apply highlight based on answer
+      if (selected.value === 'correct') {
+        selected.parentElement.classList.add('correct');
+        document.getElementById('feedback').innerHTML = "✅ 💖 Admitting it looks good on you 💖";
+      } else {
+        selected.parentElement.classList.add('wrong');
+        document.getElementById('feedback').innerHTML = "❌ Nice try. But you know the truth ❤️";
+      }
     }
   </script>
 </body>
