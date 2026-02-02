@@ -91,28 +91,29 @@
   <br>
   <a href="question5.html">Next ➡️</a>
 
-  <script>
-    function checkAnswer(selected) {
-      // Reset all options
-      document.querySelectorAll('.option').forEach(opt => {
-        opt.classList.remove('correct', 'wrong');
-      });
+<script>
+  function checkAnswer(selected) {
+    // Reset all options
+    document.querySelectorAll('.option').forEach(opt => {
+      opt.classList.remove('correct', 'wrong');
+    });
 
-      // Apply highlight based on answer
-      if (selected.value === 'correct') {
-        selected.parentElement.classList.add('correct');
-        document.getElementById('feedback').innerHTML = "✅ 💖 That's the answer of my dreams 💖";
-      } else {
-        selected.parentElement.classList.add('wrong');
-        document.getElementById('feedback').innerHTML = "❌ Hmm.... I expected more love";
-      }
-      else {
-        selected.parentElement.classList.add('wrong1');
-        document.getElementById('feedback').innerHTML = "❌ Eppa pathalum soru soru";
-      }
+    // Apply highlight based on answer
+    if (selected.value === 'correct') {
+      selected.parentElement.classList.add('correct');
+      document.getElementById('feedback').innerHTML = "✅ 💖 That's the answer of my dreams 💖";
+    } else if (selected.value === 'wrong1') {
+      selected.parentElement.classList.add('wrong');
+      document.getElementById('feedback').innerHTML = "❌ Eppa pathalum soru soru";
+    } else {
+      selected.parentElement.classList.add('wrong');
+      document.getElementById('feedback').innerHTML = "❌ Hmm.... I expected more love";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
+
 
 
