@@ -10,26 +10,27 @@
       background-size: cover;
       background-position: center;
       height: 100vh; /* full viewport height */
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertical centering */
+      align-items: center;     /* horizontal centering */
+      text-align: center;
+      color: black;
     }
 
-    .hero-text {
-      position: absolute;
-      bottom: 20px; /* stick to bottom */
-      left: 50%;
-      transform: translateX(-50%);
+    h1 {
       font-size: 2.5em;
       font-weight: bold;
-      color: black; /* black font */
-      background-color: rgba(255, 255, 255, 0.7); /* block style background */
+      background-color: rgba(255, 255, 255, 0.7); /* block style for readability */
       padding: 10px 20px;
       border-radius: 5px;
-      text-align: center;
     }
 
     .content {
-      text-align: center;
-      margin-top: 30px;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 15px;
+      border-radius: 5px;
     }
 
     a {
@@ -49,6 +50,7 @@
   </style>
 </head>
 <body>
+
 <!-- Hero Section -->
   <div class="hero">
     <h1>💖 Welcome to our Valentine Quiz! 💖</h1>
@@ -61,3 +63,4 @@
   </div>
 </body>
 </html>
+
